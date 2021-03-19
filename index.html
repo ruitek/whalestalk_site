@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+
+    <title>WhalesTalk RTC SDK</title>
+
+    <!-- include common vendor stylesheets & fontawesome -->
+    <link rel="stylesheet" type="text/css" href="./dist/bootstrap/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="./dist/fontawesome-free/css/fontawesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./dist/fontawesome-free/css/brands.min.css">
+    <link rel="stylesheet" type="text/css" href="./dist/fontawesome-free/css/solid.min.css">
+
+    <!-- ace.css -->
+    <link rel="stylesheet" type="text/css" href="./dist/css/ace.min.css">
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="./assets/favicon.png" />
+
+    <link rel="stylesheet" type="text/css" href="./dist/css/ace-themes.min.css">
+
+  </head>
+
+  <body>
+    <div class="body-container">
+      <div class="pos-abs" id="scroll-down"></div>
+
+      <nav class="navbar navbar-fixed navbar-expand-lg navbar-white">
+        <div class="navbar-inner shadow-sm border-b-1 brc-grey-l2">
+          <div class="container">
+
+            <button type="button" class="navbar-toggler btn btn-burger burger-times static collapsed d-flex d-lg-none ml-2" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navbar menu">
+              <span class="bars text-dark-tp3"></span>
+            </button><!-- mobile navbar toggler button -->
+
+
+            <div class="navbar-intro justify-content-xl-between w-auto border-0">
+              <a class="navbar-brand text-dark-tp3 text-180" href="#page-top">
+                <img alt="Logo" src="./assets/image/whalestalk/logo_top.png"/>
+                <span class="text-70">WhalesTalk</span>
+              </a><!-- /.navbar-brand -->
+            </div><!-- /.navbar-intro -->
+
+            <div class="navbar-menu collapse navbar-collapse navbar-backdrop ml-auto mr-lg-4" id="navbarMenu">
+
+              <div class="navbar-nav">
+                <ul class="nav nav-compact-3">
+
+                  <li class="nav-item dropdown mx-1px">
+                    <a class="btn btn-white btn-h-default btn-a-default" href="#tech-details">
+                      <i class="fa fa-map fa-flip-horizontal mr-1 text-green bgc-white-tp1 radius-1 p-1"></i>
+                      Explore
+                    </a>
+                  </li>
+
+                  <li class="nav-item dropdown mx-1px">
+                    <a class="btn btn-white btn-h-default btn-a-default" href="#github-link">
+                      <i class="fa fa-download fa-flip-horizontal mr-1 text-info-d2 bgc-white-tp1 radius-1 p-1"></i>
+                      Download
+                    </a>
+                  </li>
+
+                  <li class="nav-item dropdown mx-1px">
+                    <a class="btn btn-white btn-h-default btn-a-default" href="#footer-contact">
+                      <i class="fa fa-phone fa-flip-horizontal mr-1 text-blue bgc-white-tp1 radius-1 p-1"></i>
+                      Contact
+                    </a>
+                  </li>
+
+                </ul><!-- /.navbar-nav menu -->
+              </div><!-- /.navbar-nav -->
+
+            </div><!-- /.navbar-menu.navbar-collapse -->
+
+          </div>
+        </div><!-- /.navbar-inner -->
+      </nav>
+      <div class="main-container bgc-white">
+
+        <div role="main" class="main-content">
+          <div class="page-content p-0">
+            <!-- the page intro for dark theme -->
+            <div id="page-top" class="page-intro pos-rel navbar-darkblue py-2 pt-xl-4 py-xl-5 text-white">
+
+              <!-- some random circles -->
+              <div class="d-none d-lg-block">
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.16;width:4px; height:4px; top:30%; left:85%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.2;width:6px; height:6px; top:91%; left:15%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.3;width:8px; height:8px; top:1%; left:87%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.24;width:6px; height:6px; top:0; left:70%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.17;width:16px; height:16px; top:79%; left:20%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.35;width:6px; height:6px; top:10%; left:0;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.17;width:14px; height:14px; top:16%; left:87%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.15;width:17px; height:17px; top:82%; left:71%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.2;width:12px; height:12px; top:17%; left:92%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.19;width:12px; height:12px; top:44%; left:64%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.27;width:11px; height:11px; top:43%; left:89%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.18;width:9px; height:9px; top:55%; left:25%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.38;width:10px; height:10px; top:5%; left:71%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.11;width:9px; height:9px; top:62%; left:22%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.39;width:18px; height:18px; top:47%; left:3%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.18;width:6px; height:6px; top:12%; left:20%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.34;width:10px; height:10px; top:97%; left:95%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.33;width:7px; height:7px; top:74%; left:87%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.17;width:7px; height:7px; top:84%; left:72%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.14;width:9px; height:9px; top:7%; left:23%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.39;width:15px; height:15px; top:94%; left:91%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.28;width:14px; height:14px; top:60%; left:83%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.3;width:15px; height:15px; top:65%; left:66%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.1;width:7px; height:7px; top:3%; left:95%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.39;width:10px; height:10px; top:20%; left:53%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.14;width:13px; height:13px; top:13%; left:77%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.38;width:13px; height:13px; top:76%; left:13%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.19;width:16px; height:16px; top:9%; left:42%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.21;width:16px; height:16px; top:37%; left:69%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.11;width:4px; height:4px; top:21%; left:95%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.16;width:10px; height:10px; top:76%; left:74%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.16;width:17px; height:17px; top:9%; left:88%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.21;width:15px; height:15px; top:79%; left:131%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.37;width:14px; height:14px; top:94%; left:8%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.2;width:9px; height:9px; top:65%; left:87%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.1;width:16px; height:16px; top:4%; left:93%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.32;width:18px; height:18px; top:36%; left:81%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.35;width:7px; height:7px; top:0; left:21%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.22;width:11px; height:11px; top:69%; left:82%;"></div>
+                <div class="pos-abs bgc-white radius-round" style="opacity: 0.32;width:6px; height:6px; top:68%; left:79%;"></div>
+              </div>
+
+              <div class="row container container-plus mx-auto mt-3 mb-5">
+                <div class="col-12 col-md-7 d-flex flex-column justify-content-center text-center" data-aos="fade-right" data-aos-delay="100">
+                  <h1 class="align-self-center">
+                    <span class="text-110 text-yellow-l3">
+                    WhalesTalk
+                </span>
+
+                    <span class="text-90">
+                    Real Time Communication SDK
+                </span>
+                  </h1>
+
+                  <h4 class="my-3 text-white text-120">
+                    Enables a SINGLE codebase for RTC applications across major modern Operating Systems!
+                  </h4>
+
+                </div><!-- /.col -->
+
+
+                <div class="col-12 col-md-5 order-first order-md-last mb-4 mb-md-0" data-aos="fade-left">
+                  <img alt="Product Image" src="assets/image/whalestalk/overview.png" class="w-90 1mx-auto" />
+                </div><!-- /.col -->
+              </div><!-- /.row -->
+
+            </div><!-- /#page-intro-dark -->
+            <div class="py-3 mt-3 bgc-white">
+              <div class="container container-plus py-2 py-lg-4 text-center">
+
+                <h2 class="text-primary mb-2 text-190">
+                  Major components of WhalesTalk SDK
+                </h2>
+
+                <div class="text-dark-l1 text-110">
+                  Turn-Key solution for IP based real time Audio, Video and Data communications on all modern computing devices.
+                </div>
+
+                <div class="row mt-4">
+                  <div class="col-12 col-lg-11 col-xl-9 mx-auto">
+
+                    <div class="row my-4">
+                      <div class="col-12 col-md-4 mb-4 mb-md-0 pb-2 pb-md-0">
+                        <div class="d-inline-block text-center bgc-green-l4 p-4 radius-round text-120 border-2 brc-green-m4 d-style">
+                          <i class="fa fa-server fa-2x w-5 h-5 text-green-d1 d-zoom-2"></i>
+                        </div>
+
+                        <h3 class="text-grey-d3 text-140 my-2 my-md-3">
+                          Flexible backend
+                        </h3>
+
+                        <p class="text-dark-m3">
+                          Golang empowered REST API, Signaling services and more
+                        </p>
+                      </div>
+
+
+                      <div class="col-12 col-md-4 mb-4 mb-md-0 pb-2 pb-md-0">
+                        <div class="d-inline-block text-center bgc-blue-l4 p-4 radius-round text-120 border-2 brc-blue-l1 d-style">
+                          <i class="fa fa-cogs text-180 w-5 h-5 text-blue-d1 d-zoom-2"></i>
+                        </div>
+
+                        <h3 class="text-grey-d3 text-140 my-2 my-md-3">
+                          Intuitive client SDK
+                        </h3>
+
+                        <p class="text-dark-m3">
+                          Unified C++ 11/14 API with libraries across major modern OSes
+                        </p>
+                      </div>
+
+
+                      <div class="col-12 col-md-4">
+                        <div class="d-inline-block text-center bgc-orange-l4 p-4 radius-round text-120 border-2 brc-warning-m4 d-style">
+                          <i class="fa fa-lock text-180 w-5 h-5 text-orange-d2 d-zoom-2"></i>
+                        </div>
+
+                        <h3 class="text-grey-d3 text-140 my-2 my-md-3">
+                          E2E security
+                        </h3>
+
+                        <p class="text-dark-m3">
+                          SRTP-DTLS for Audio and Video, SCTP-DTLS for Data
+                        </p>
+                      </div>
+                    </div><!-- /.row -->
+
+                  </div><!-- /.col -->
+                </div><!-- /.row -->
+
+              </div><!-- /.container -->
+            </div>
+            <div class="bgc-blue-l4" id="tech-details">
+              <div class="container container-plus py-45">
+                <div class="row">
+                  <div class="col-12 col-lg-8 mx-auto">
+                    <div class="d-flex flex-column align-items-center flex-md-row align-items-md-center">
+                      <div class="radius-2 mt-1 mr-md-4 shadow-sm border-1 p-2px brc-brown-l1 bgc-white">
+                        <div class="overflow-hidden radius-1">
+                          <img alt="Travel image" src="assets/image/whalestalk/cross_platform.png" class="dh-zoom-2" />
+                        </div>
+                      </div>
+
+                      <div class="flex-grow-1 text-dark-m3 mt-4 mt-md-0">
+                        <h3 class="text-primary text-md-left mb-4">
+                          One codebase for all
+                        </h3>
+
+                        <p>
+                          WhalesTalk RTC Client SDK is based on C++ 11/14.
+                        </p>
+                        <p>
+                          It has been ported to X86 and ARM architecture for major modern Operating Systems.
+                        </p>
+                        <p>
+                          <button type="button" class="btn btn-outline-primary btn-bold btn-bgc-white" data-toggle="modal" data-target="#aside-crossplatform">
+                            Read More
+                          </button>
+                        </p>
+                      </div>
+                    </div>
+                  </div><!-- /.col -->
+                </div><!-- /.row -->
+              </div><!-- /.container -->
+            </div>
+
+
+            <!-- Slides in from Top and fullscreen -->
+            <div class="modal aside-fs ace-aside aside-top aside-above-nav fade" data-backdrop="false" id="aside-crossplatform" tabindex="-1" role="dialog" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-scrollable" role="document">
+                <div class="modal-content border-0 bgc-blue-l4 radius-0 overflow-hidden">
+                  <div class="modal-body pt-4 pt-lg-5 h-auto flex-grow-0">
+
+                    <div class="container container-plus py-45">
+                      <div class="flex-grow-1 text-dark-m3 mt-4 mt-md-0">
+                        <h3 class="text-blue-d1 text-md-left mb-4">
+                          One codebase for all
+                        </h3>
+
+                        <p>
+                          WhalesTalk RTC Client SDK provides a unified C++ 11/14 application programming interface (API)
+                          for major modern Operating Systems running on x86_64 and ARM processors. Below table is
+                          a matrix of supported OS-es and processors.
+                        </p>
+
+                        <div class="card-body p-0">
+                          <div class="table-responsive-md">
+                            <table class="table table-bordered border-0	table-striped-secondary text-dark-m1 mb-0">
+                              <thead>
+                                <tr class="bgc-info text-white brc-black-tp10">
+                                  <th>OS</th>
+                                  <th>Processor</th>
+                                  <th>Status</th>
+                                </tr>
+                              </thead>
+
+                              <tbody>
+                                <tr>
+                                  <td>Windows 10</td>
+                                  <td>x86_64</td>
+                                  <td><span class='badge badge-sm bgc-green-d1 text-white pb-1 px-25'>Supported</span></td>
+                                </tr>
+                                <tr>
+                                  <td>MacOS 10.9+</td>
+                                  <td>x86_64</td>
+                                  <td><span class='badge badge-sm bgc-green-d1 text-white pb-1 px-25'>Supported</span></td>
+                                </tr>
+                                <tr>
+                                  <td>MacOS 11</td>
+                                  <td>Apple Silicon</td>
+                                  <td><span class='badge badge-sm bgc-warning-d1 text-white pb-1 px-25'>WIP</span></td>
+                                </tr>
+                                <tr>
+                                  <td>iOS 12.0+</td>
+                                  <td>ARM64</td>
+                                  <td><span class='badge badge-sm bgc-green-d1 text-white pb-1 px-25'>Supported</span></td>
+                                </tr>
+                                <tr>
+                                  <td>Android 8.0+</td>
+                                  <td>ARM7-Neon</td>
+                                  <td><span class='badge badge-sm bgc-green-d1 text-white pb-1 px-25'>Supported</span></td>
+                                </tr>
+                                <tr>
+                                  <td>Android 8.0+</td>
+                                  <td>ARM64</td>
+                                  <td><span class='badge badge-sm bgc-green-d1 text-white pb-1 px-25'>Supported</span></td>
+                                </tr>
+                                <tr>
+                                  <td>Ubuntu 16.04+</td>
+                                  <td>x86_64</td>
+                                  <td><span class='badge badge-sm bgc-green-d1 text-white pb-1 px-25'>Supported</span></td>
+                                </tr>
+                                <tr>
+                                  <td>Ubuntu 16.04+</td>
+                                  <td>ARM64</td>
+                                  <td><span class='badge badge-sm bgc-green-d1 text-white pb-1 px-25'>Supported</span></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+
+
+                      </div>
+                    </div>
+                  </div><!-- .modal-body -->
+
+                  <!-- Close button -->
+                  <a href="#" class="px-3 py-0 no-underline bgc-transparent bgc-h-black-tp8 text-dark-d2 position-tr mr-2 mt-1 mr-lg-5 mt-lg-3 radius-1" data-dismiss="modal" aria-label="Close">
+                    <span class="fa-3x h-1">&times;</span>
+                  </a>
+
+                </div><!-- .modal-content -->
+              </div><!-- .modal-dialog -->
+            </div><!-- .ace-aside -->
+            <div>
+              <div class="container container-plus py-45">
+                <div class="row">
+                  <div class="col-12 col-lg-8 mx-auto">
+                    <div class="d-flex flex-column align-items-center flex-md-row align-items-md-center">
+
+                      <div class="flex-grow-1 text-dark-m3 mt-4 mt-md-0">
+                        <h3 class="text-primary text-md-left mb-4">
+                          End-to-end encryption
+                        </h3>
+
+                        <p>
+                          DTLS session is established between connecting peers.
+                        </p>
+                        <p>
+                          All audio, video and data exchanges are encrypted using AES with the session key.
+                        </p>
+                        <p>
+                          <button type="button" class="btn btn-outline-primary btn-bold btn-bgc-white" data-toggle="modal" data-target="#aside-e2e-encryption">
+                            Read More
+                          </button>
+                        </p>
+                      </div>
+
+                      <div class="radius-2 mt-1 ml-md-4 shadow-sm border-1 p-2px brc-default-l1 bgc-white order-first order-md-last">
+                        <div class="overflow-hidden radius-1">
+                          <img alt="Travel image" src="assets/image/whalestalk/e2e_encryption.png" class="dh-zoom-2" />
+                        </div>
+                      </div>
+                    </div>
+                  </div><!-- /.col -->
+                </div><!-- /.row -->
+              </div><!-- /.container -->
+            </div>
+
+            <!-- Slides in from Top and fullscreen -->
+            <div class="modal aside-fs ace-aside aside-top aside-above-nav fade" data-backdrop="false" id="aside-e2e-encryption" tabindex="-1" role="dialog" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-scrollable" role="document">
+                <div class="modal-content border-0 bgc-blue-l4 radius-0 overflow-hidden">
+                  <div class="modal-body pt-4 pt-lg-5 h-auto flex-grow-0">
+
+                    <div class="container container-plus py-45">
+                      <p class="flex-grow-1 text-dark-m3 mt-4 mt-md-0">
+                      <h3 class="text-blue-d1 text-md-left mb-4">
+                        End-to-end encryption
+                      </h3>
+
+                      <p>
+                        WhalesTalk RTC system adopts the same security profile as WebRTC, which is mandated by
+                        <a class="text-primary-d2" href="https://tools.ietf.org/html/draft-ietf-rtcweb-security-arch-20">WebRTC Security
+                          Architecture</a>.
+                        Below picture depicts an overall connectivity diagram for a typical Peer to Peer topology.
+                        The security profile applies to Media Server in the middle Star topology too.
+                      </p>
+
+                      <p>
+                        <!--        <div class="overflow-hidden radius-1">-->
+                        <img alt="Security profile" src="assets/image/whalestalk/p2p_security.png" />
+                        <!--        </div>-->
+                      </p>
+
+                      <h4 class="text-blue-d1 text-md-left mb-4">
+                        Signaling plane
+                      </h4>
+
+                      <p>
+                        API server authenticates and authorises backend services for native clients, the client connected to the
+                        API server via HTTPS.
+
+                        Clients exchange media and network settings via MQTT server, and the connection is via MQTTS or MQTT over TLS.
+                      </p>
+
+                      <h4 class="text-blue-d1 text-md-left mb-4">
+                        Media plane
+                      </h4>
+
+                      <p>
+                        Depends on the topology, the media can be a direct Peer to Peer connection or a Peer to Media Server connection.
+                        For either case, the connection is via a Datagram Transport Layer Security (DTLS) tunnel.
+                        On top of the DTLS tunnel, Secure Real-time Transport Protocol (SRTP) is used to encrypt all the media flow
+                        between two end points. Stream Control Transmission Protocol (SCTP) is used for all the data flow between two
+                        end points.
+
+                        The RFCs for the security framework include
+
+
+                      </p>
+
+                      <ul class="list-unstyled text-dark-m3">
+
+                        <li class="mb-3">
+                          <i class="w-3 text-center fa fa-angle-right text-110 text-muted"></i>
+                          <a class="text-primary-d2" href="https://tools.ietf.org/html/rfc6347">RFC6347 DTLS</a>
+                        </li>
+
+                        <li class="mb-3">
+                          <i class="w-3 text-center fa fa-angle-right text-110 text-muted"></i>
+                          <a class="text-primary-d2" href="https://tools.ietf.org/html/rfc3711">RFC3711 SRTP</a>
+                        </li>
+
+                        <li class="mb-3">
+                          <i class="w-3 text-center fa fa-angle-right text-110 text-muted"></i>
+                          <a class="text-primary-d2" href="https://tools.ietf.org/html/rfc5763">RFC5763 DTLS-SRTP</a>
+                        </li>
+
+                        <li class="mb-3">
+                          <i class="w-3 text-center fa fa-angle-right text-110 text-muted"></i>
+                          <a class="text-primary-d2" href="https://tools.ietf.org/html/rfc4960">RFC4960 SCTP</a>
+                        </li>
+
+                      </ul>
+
+
+                    </div>
+                  </div><!-- .modal-body -->
+
+                  <!-- Close button -->
+                  <a href="#" class="px-3 py-0 no-underline bgc-transparent bgc-h-black-tp8 text-dark-d2 position-tr mr-2 mt-1 mr-lg-5 mt-lg-3 radius-1" data-dismiss="modal" aria-label="Close">
+                    <span class="fa-3x h-1">&times;</span>
+                  </a>
+
+                </div><!-- .modal-content -->
+              </div><!-- .modal-dialog -->
+            </div><!-- .ace-aside -->
+            <div class="bgc-blue-l4">
+              <div class="container container-plus py-45">
+                <div class="row">
+                  <div class="col-12 col-lg-8 mx-auto">
+                    <div class="d-flex flex-column align-items-center flex-md-row align-items-md-center">
+                      <div class="radius-2 mt-1 mr-md-4 shadow-sm border-1 p-2px brc-brown-l1 bgc-white">
+                        <div class="overflow-hidden radius-1">
+                          <img alt="Travel image" src="assets/image/whalestalk/plugins.png" class="dh-zoom-2" />
+                        </div>
+                      </div>
+
+                      <div class="flex-grow-1 text-dark-m3 mt-4 mt-md-0">
+                        <h3 class="text-primary text-md-left mb-4">
+                          Flexible plugin system
+                        </h3>
+
+                        <p>
+                          WhalesTalk RTC SDK backend is facilitated with a flexible plugin system.
+                        </p>
+                        <p>
+                          It can enable special purposed services with dedicated plugins.
+                        </p>
+                        <p>
+                          For example, Face recognition plugin can authenticate attendees in a meeting.
+                        </p>
+                        <p>
+                          <button type="button" class="btn btn-outline-primary btn-bold btn-bgc-white" data-toggle="modal" data-target="#aside-plugins">
+                            Read More
+                          </button>
+                        </p>
+                      </div>
+                    </div>
+                  </div><!-- /.col -->
+                </div><!-- /.row -->
+              </div><!-- /.container -->
+            </div>
+
+            <!-- Slides in from Top and fullscreen -->
+            <div class="modal aside-fs ace-aside aside-top aside-above-nav fade" data-backdrop="false" id="aside-plugins" tabindex="-1" role="dialog" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-scrollable" role="document">
+                <div class="modal-content border-0 bgc-blue-l4 radius-0 overflow-hidden">
+                  <div class="modal-body pt-4 pt-lg-5 h-auto flex-grow-0">
+
+                    <div class="container container-plus py-45">
+                      <div class="flex-grow-1 text-dark-m3 mt-4 mt-md-0">
+                        <h3 class="text-blue-d1 text-md-left mb-4">
+                          Flexible plugin system
+                        </h3>
+
+                        <p>
+                          WhalesTalk's media server is capable of performing real time audio and video processes.
+                          Upon request, we can work on customized plugins to meet customer's special requirements.
+                        </p>
+
+                        <p>
+                          We implemented a Face Recognition plugin that only allows listed participants to attend a meeting.
+                          Currently, we are working on a speech recognition plugin to take meeting notes automatically.
+                        </p>
+
+                      </div>
+                    </div>
+                  </div><!-- .modal-body -->
+
+                  <!-- Close button -->
+                  <a href="#" class="px-3 py-0 no-underline bgc-transparent bgc-h-black-tp8 text-dark-d2 position-tr mr-2 mt-1 mr-lg-5 mt-lg-3 radius-1" data-dismiss="modal" aria-label="Close">
+                    <span class="fa-3x h-1">&times;</span>
+                  </a>
+
+                </div><!-- .modal-content -->
+              </div><!-- .modal-dialog -->
+            </div><!-- .ace-aside -->
+            <div id="github-link">
+              <div class="container container-plus py-3 my-45 px-lg-5 text-center">
+                <div class="row">
+                  <div class="col-lg-9 mx-auto">
+                    <h4 class="text-primary text-center text-160 mb-2">
+                      Supported Systems
+                    </h4>
+                    <hr class="brc-secondary-l3" />
+
+                    <div class="row text-130 mt-4">
+                      <div class="col-4 col-sm-3 col-md-2 text-center my-2">
+                        <i class="d-block fab fa-windows text-primary fa-2x dh-zoom-2"></i>
+                        <span class="text-90 text-muted">Windows</span>
+                      </div>
+
+                      <div class="col-4 col-sm-3 col-md-2 text-center my-2">
+                        <i class="d-block fab fa-apple text-grey-d2 fa-2x dh-zoom-2"></i>
+                        <span class="text-90 text-muted">MacOS</span>
+                      </div>
+
+                      <div class="col-4 col-sm-3 col-md-2 text-center my-2">
+                        <i class="d-block fab fa-linux text-dark-d4 fa-2x dh-zoom-2"></i>
+                        <span class="text-90 text-muted">Linux</span>
+                      </div>
+
+                      <div class="col-4 col-sm-3 col-md-2 text-center my-2">
+                        <i class="d-block fab fa-app-store-ios text-grey-d2 fa-2x dh-zoom-2"></i>
+                        <span class="text-90 text-muted">iOS</span>
+                      </div>
+
+                      <div class="col-4 col-sm-3 col-md-2 text-center my-2">
+                        <i class="d-block fab fa-android text-success-m1 fa-2x dh-zoom-2"></i>
+                        <span class="text-90 text-muted">Android</span>
+                      </div>
+
+                      <div class="col-4 col-sm-3 col-md-2 text-center my-2">
+                        <i class="d-block fa fa-microchip text-green-d3 fa-2x dh-zoom-2"></i>
+                        <span class="text-90 text-muted">Embedded</span>
+                      </div>
+                    </div><!-- /.row -->
+                  </div><!-- /.col -->
+                </div><!-- /.row -->
+              </div>
+            </div>
+            <div class="footer h-auto text-white" id="footer-contact">
+              <div class="footer-inner bgc-black-tp4 pt-5 pb-3">
+                <div class="container container-plus">
+                  <div class="row">
+
+                    <div class="col-12">
+                      <div class="row text-center text-lg-left">
+
+                        <div class="col-3">
+                          <img alt="Logo" src="assets/image/whalestalk/logo_root.png" />
+                        </div><!-- /.col -->
+
+                        <div class="col-4">
+                          <h6 class="text-white-tp2 text-95 text-600 mb-3">ABOUT</h6>
+                          <p class="text-90">
+                            WhalesTalk works on real time communication SDK that helps developers build messaging,
+                            voice and video applications for desktop, mobile and embedded platforms with a single codebase.
+                          </p>
+
+                          <p class="text-90">
+                            A team of veteran developers is ready for working with you on exciting projects.
+                          </p>
+                        </div>
+
+                        <div class="col-4">
+                          <h6 class="text-white-tp2 text-95 text-600 mb-3">CONTACT</h6>
+                          <div>
+                            <div class="my-1 text-90">
+                              <i class="fa fa-home text-blue-l3"></i>
+                              37 Jalan Pemimpin, Mapex Building #03-11, Singapore 577177
+                            </div>
+
+                            <div class="my-1 text-90">
+                              <i class="fa fa-envelope text-blue-l3"></i>
+                              support@whalestalk.com
+                            </div>
+
+                            <div class="my-1 text-90">
+                              <i class="fa fa-phone text-blue-l3"></i>
+                              +65-6778-0311
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div><!-- /.col -->
+
+                  </div><!-- /.row -->
+
+                  <div class="text-center mt-45">
+                    <span class="text-white">
+                    Copyright &copy; 2020 - 2021 WhalesTalk.com
+                </span>
+                  </div>
+                </div><!-- /.container -->
+              </div><!-- /.footer-inner -->
+            </div><!-- /.footer -->
+            <div class="footer-tools">
+              <a href="#" class="btn-scroll-up btn btn-blue px-25 py-2 text-95 border-2 radius-round mb-2 mr-2">
+                <i class="fa fa-arrow-up w-2 h-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- include common vendor scripts used in demo pages -->
+    <script src="./dist/jquery/jquery.min.js"></script>
+    <script src="./dist/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- include ace.js -->
+    <script src="./dist/js/ace.min.js"></script>
+
+  </body>
+
+</html>
